@@ -54,26 +54,14 @@ const login = () => {
               <Box className={classes.Mbox}>
                 <img src="./kbjlogo.jpg" />
               </Box>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: 30,
-                  fontWeight: 'bold',
-                  color: '#198bd2',
-                  mb: 5,
-                }}
-              >
-                김반장 통합업무 상환판
-              </Box>
+              <Box className={classes.Ibox}>김반장 통합업무 상환판</Box>
               <form onSubmit={imports.handleSubmit}>
                 <label className="inputlabel" htmlFor="id">
                   ID
                 </label>
                 <input
                   autoComplete="off"
-                  value={
+                  defaultValue={
                     cookies.rememberId ? cookies.rememberId : imports.values.id
                   }
                   onChange={imports.handleChange}
@@ -93,14 +81,7 @@ const login = () => {
                 />
 
                 <Box sx={{ display: 'flex' }}>
-                  <Box
-                    sx={{
-                      width: '100%',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                  >
+                  <Box className={classes.checkBox}>
                     <Checkbox
                       checked={idRemember}
                       onChange={handleCheck}
