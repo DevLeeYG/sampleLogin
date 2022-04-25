@@ -11,6 +11,26 @@ import { NoSsr } from '@mui/base';
 const login = () => {
   const classes = loginsty();
 
+  function logText<T>(text: T[]): T[] {
+    console.log(text.length); // Error: T doesn't have .length
+    return text;
+  }
+
+  const logTex = <T extends unknown>(text: T[]): T[] => {
+    console.log(text.length); // Error: T doesn't have .length
+    return text;
+  };
+
+  const arg = [1, 2, 3, 4, 5];
+
+  const reverse = <T extends unknown>(items: T[]) => {
+    return items.reverse();
+  };
+
+  const reversed = reverse(arg);
+
+  console.log(reversed);
+
   useEffect(() => {
     if (cookies.rememberId !== undefined) {
       setIdRemember(true);
